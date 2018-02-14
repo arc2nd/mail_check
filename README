@@ -1,0 +1,18 @@
+1) edit the 'envs.json' file for your email account
+2) run 'python make_crypt.py'. This should create a file 'envs.crypt'
+3) delete 'envs.json'
+4) go through 'mail_check.py' and make sure all the absolute paths 
+    are ok
+5) add your own python functions to files in the commands folder, 
+    the function name and the file must match
+
+Every time the script runs, it should decrypt the 'envs.crypt' file
+and put them into the python process's environment variables. The 
+script will then query the environment variables for addresses and 
+passwords.
+
+Example cron:
+01 * * * * /usr/bin/python /home/pi/scripts//mail_check/mail_check.py > /home/pi/crontab_output.txt
+
+You can now send yourself emails where the subject is "CMD: <arbitrary 
+text> and the body is something like <cmd>%<arguments>

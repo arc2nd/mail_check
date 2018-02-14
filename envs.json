@@ -1,0 +1,6 @@
+{
+    "AUTO_ADDR": "<your.email>.auto@gmail.com", 
+    "AUTO_FROM": "<your.email>@gmail.com", 
+    "AUTO_PASS": "<your.password>", 
+    "AUTO_PREFIX": "CMD:"
+}
