@@ -12,7 +12,7 @@ script will then query the environment variables for addresses and
 passwords.
 
 Example cron:
-01 * * * * /usr/bin/python /home/pi/scripts//mail_check/mail_check.py > /home/pi/crontab_output.txt
+01 * * * * /usr/bin/python /home/pi/scripts/mail_check/mail_check.py > /home/pi/crontab_output.txt
 
 You can now send yourself emails where the subject is "CMD: <arbitrary 
 text> and the body is something like <cmd>%<arguments>
