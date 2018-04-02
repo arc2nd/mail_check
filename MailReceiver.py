@@ -22,7 +22,9 @@ class MailReceiver(DurableReceiver):
         if 'command' in body_dict and 'arguments' in body_dict:
             cmd = body_dict['command']
             args = body_dict['arguments']
-            if cmd.lower() in self.plugins:
+            if cmd.lower() == 'msg':
+                print('yeah, I\'m not doing that. Too easy to infinite loop')
+            elif cmd.lower() in self.plugins:
                 print('cmd {} found in plugins'.format(cmd))
                 print('calling with args: {}'.format(' '.join(args)))
                 #self.plugins[cmd.lower()](*args)
