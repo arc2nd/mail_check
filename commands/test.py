@@ -1,4 +1,1 @@
-#!/usr/bin/python
-
-def test(msg):
-    print('test function: {}'.format(msg))
+../all_commands/test.py
