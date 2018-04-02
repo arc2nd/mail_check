@@ -138,7 +138,8 @@ class MailCheck(object):
         with the class
         """
         #cmd_dir = os.path.join(os.getcwd(), 'commands')
-        cmd_dir = '/home/pi/scripts/mail_check/commands'
+        #cmd_dir = '/home/pi/scripts/mail_check/commands'
+        cmd_dir = os.path.join(os.path.expanduser('~'), 'scripts/mail_check/commands')
         all_files = os.listdir(cmd_dir)
         self._log(6, all_files)
         py_files = []
