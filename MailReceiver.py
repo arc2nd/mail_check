@@ -27,7 +27,7 @@ class MailReceiver(DurableReceiver):
             elif cmd.lower() in self.plugins:
                 print('cmd {} found in plugins'.format(cmd))
                 print('calling with args: {}'.format(' '.join(args)))
-                #self.plugins[cmd.lower()](*args)
+                self.plugins[cmd.lower()](*args)
 
         ch.basic_ack(delivery_tag=method.delivery_tag)
 
