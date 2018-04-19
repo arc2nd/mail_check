@@ -12,7 +12,6 @@ def msg(cmd, *args):
     msg_dict = {'command': cmd, 'arguments': args}
     msg_str = json.dumps(msg_dict, sort_keys=True, indent=4)
 
-
     # Create Messenger Object
     my_msgr = DurableMessenger()
     my_msgr.talk(chan_name='mail_check', msg=msg_str)

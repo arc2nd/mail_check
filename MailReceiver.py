@@ -4,10 +4,10 @@ import json
 import types
 import datetime
 
-from pellets.DurableReceiver import *
+from pellets.DurableMessenger import *
 import mail_check as mc
 
-class MailReceiver(DurableReceiver):
+class MailMessenger(DurableMessenger):
     def load_commands(self):
         my_mc = mc.MailCheck()
         return my_mc.modules
@@ -27,7 +27,7 @@ class MailReceiver(DurableReceiver):
             elif cmd.lower() in self.plugins:
                 print('cmd {} found in plugins'.format(cmd))
                 print('calling with args: {}'.format(' '.join(args)))
-                self.plugins[cmd.lower()](*args)
+                self.plugins[cmd.lower()](args)
 
         ch.basic_ack(delivery_tag=method.delivery_tag)
 
@@ -41,5 +41,5 @@ class MailReceiver(DurableReceiver):
         chan.start_consuming()
 
 if __name__ == '__main__':
-    my_rcvr = MailReceiver()
-    my_rcvr.listen('mail_check')
+    my_msgr = MailMessenger()
+    my_msgr.listen('mail_check')
