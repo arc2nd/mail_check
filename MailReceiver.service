@@ -1,0 +1,12 @@
+[Unit]
+Description=MailReceiver
+After=multi-user.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /home/pi/scripts/mail_check/MailReceiver.py
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
