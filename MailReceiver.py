@@ -4,11 +4,10 @@ import json
 import types
 import datetime
 
-#from pellets.DurableReceiver import *
-from pellets import DurableMessenger
+from pellets.DurableMessenger import *
 import mail_check as mc
 
-class MailReceiver(DurableMessenger):
+class MailMessenger(DurableMessenger):
     def load_commands(self):
         my_mc = mc.MailCheck()
         return my_mc.modules
@@ -42,5 +41,5 @@ class MailReceiver(DurableMessenger):
         chan.start_consuming()
 
 if __name__ == '__main__':
-    my_rcvr = MailReceiver()
-    my_rcvr.listen('mail_check')
+    my_msgr = MailMessenger()
+    my_msgr.listen('mail_check')
