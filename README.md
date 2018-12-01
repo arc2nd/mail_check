@@ -23,9 +23,9 @@ with the body being something like msg%<cmd><first arg>[,<second arg>,<third arg
 
 Update 11-30-18
 mail_check.py is run as a cron job
-  it checks the email and executes the plugin commands
-  if the msg plugin is called it will generate a RabbitMQ message
++ it checks the email and executes the plugin commands
++ if the msg plugin is called it will generate a RabbitMQ message
 MailReceiver.py is run as a service
-  it relies on my pellets repo to build RabbitMQ consumers
-  when a message comes in it calls a mail_check plugin
-  accepts messages from anywhere, not just mail_check
++ it relies on my pellets repo to build RabbitMQ consumers
++ when a message comes in it calls a mail_check plugin
++ accepts messages from anywhere, not just mail_check
