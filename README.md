@@ -19,7 +19,7 @@ You can now send yourself emails where the subject is "CMD: <arbitrary
 text> and the body is something like <cmd>%<arguments>
 
 If you are using my pellets repo with RabbitMQ you can send a email 
-with the body being something like msg%<cmd><first arg>[,<second arg>,<third args>,...]
+with the body being something like `msg%<cmd><first arg>[,<second arg>,<third args>,...]`
 
 Update 11-30-18:
 
