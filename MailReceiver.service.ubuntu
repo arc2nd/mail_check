@@ -1,0 +1,20 @@
+[Unit]
+Description=MailReceiver
+
+[Service]
+User=administrator
+WorkingDirectory=/home/administrator/scripts/mail_check
+
+ExecStart=/usr/bin/python /home/administrator/scripts/mail_check/MailReceiver.py
+StandardOutput=syslog
+StandardError=syslog
+
+SuccessExitStatus=143
+
+TimeoutStopSec=10
+
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
