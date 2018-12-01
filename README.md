@@ -21,11 +21,13 @@ text> and the body is something like <cmd>%<arguments>
 If you are using my pellets repo with RabbitMQ you can send a email 
 with the body being something like msg%<cmd><first arg>[,<second arg>,<third args>,...]
 
-Update 11-30-18
+Update 11-30-18:
+
 mail_check.py is run as a cron job
 
 + it checks the email and executes the plugin commands
 + if the msg plugin is called it will generate a RabbitMQ message
+
 MailReceiver.py is run as a service
 
 + it relies on my pellets repo to build RabbitMQ consumers
